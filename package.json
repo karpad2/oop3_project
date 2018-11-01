@@ -1,9 +1,9 @@
 {
-  "name": "project",
+  "name": "oop_project",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/karpad2/oop3_project/project"
+    "url": "https://github.com/karpad2/oop3_project"
   },
   "license": "MIT",
   "scripts": {

@@ -9,6 +9,8 @@ import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 
+import '../index.css';
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -20,7 +22,7 @@ class App extends React.Component {
         });
     }
 
-    render() {
+    /*render() {
         const { alert } = this.props;
         return (
             <div className="jumbotron">
@@ -39,6 +41,17 @@ class App extends React.Component {
                     </div>
                 </div>
             </div>
+        );
+    }*/
+
+    render() {
+        return (
+            <Router history={history}>
+                <div>
+                    <Route exact path="/" component={HomePage} />
+                    <Route path="/login" component={LoginPage} />
+                </div>
+            </Router>
         );
     }
 }

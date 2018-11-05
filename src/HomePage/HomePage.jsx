@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Logo from './logo.png';
+
+//import './index.css';
 
 import { userActions } from '../_actions';
 
@@ -13,7 +16,7 @@ class HomePage extends React.Component {
         return (e) => this.props.dispatch(userActions.delete(id));
     }
 
-    render() {
+    /*render() {
         const { user, users } = this.props;
         return (
             <div className="col-md-6 col-md-offset-3">
@@ -39,6 +42,77 @@ class HomePage extends React.Component {
                 <p>
                     <Link to="/login">Logout</Link>
                 </p>
+            </div>
+        );
+    }*/
+
+    render() {
+        return (
+            <div className="main">
+                <div className="header">
+                    <a href="#" className="homepage"><b>HATTYUK</b></a>
+                    <a href="#" className="navbarlink1">LANGUAGE</a>
+                    <a href="#" className="navbarlink2">ABOUT US</a>
+                    <a href="#" className="navbarlink2">CONTACT</a>
+                    <a href="#" className="loginlink">LOG IN</a>
+                </div>
+                <div className="welcome">
+                    <i><b>WELCOME,</b> THIS SITE<br/>
+                        SHOWS OUR STUDENTS POINTS,<br/>
+                        WHAT THEY EARNED IN THE<br/>
+                        SEMESTER...
+                    </i>            
+                </div>
+                <div className="top5">
+                    <table className="myTable"> 
+                        <caption>Top &nbsp;&nbsp;&nbsp;<b> 5 </b>&nbsp;&nbsp;&nbsp; list</caption>               
+                        <tr>
+                            <td className="border_here">1.</td>
+                            <td>Szabi</td>
+                            <td>55.000</td>
+                            <td>BADGEK</td>
+                        </tr>
+                        <tr>
+                            <td className="border_here">2.</td>
+                            <td>Szabi</td>
+                            <td>45.000</td>
+                            <td>BADGEK</td>
+                        </tr>
+                        <tr>
+                            <td className="border_here">3.</td>
+                            <td>Szabi</td>
+                            <td>35.000</td>
+                            <td>BADGEK</td>
+                        </tr>
+                        <tr>
+                            <td className="border_here">4.</td>
+                            <td>Szabi</td>
+                            <td>25.000</td>
+                            <td>BADGEK</td>
+                        </tr>
+                        <tr>
+                            <td className="border_here">5.</td>
+                            <td>Szabi</td>
+                            <td>15.000</td>
+                            <td>BADGEK</td>
+                        </tr>
+                    </table>
+                </div>
+                <div className="badges">
+                    <div className="b1"><img src={ Logo }/><h3>OKAY<br/>STUDENT</h3> </div>
+                    <div className="b1"><img src={ Logo }/><h3>GUCCI<br/>HOMEWORK</h3> </div>
+                    <div className="b1"><img src={ Logo }/><h3>BEST<br/>TEAMWORK</h3> </div>            
+                    <div className="b2"><img src={ Logo }/><h3>GOOD<br/>STUDENT</h3> </div>
+                    <div className="b2"><img src={ Logo }/><h3>GUCCI<br/>HOMEWORK</h3> </div>
+                    <div className="b2"><img src={ Logo }/><h3>BEST<br/>TEAMWORK</h3> </div>
+                </div>
+                <div className="help">
+                    <h1>HOW CAN WE HELP YOU?</h1>
+                    <a href="#" className="button">Kabbe</a>
+                </div>
+                <div className="footer">
+                    <i>COPYRIGHT @ HATTYUK</i>
+                </div>
             </div>
         );
     }

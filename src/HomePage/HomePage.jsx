@@ -54,7 +54,7 @@ class HomePage extends React.Component {
                     <a href="#" className="navbarlink1">LANGUAGE</a>
                     <a href="#" className="navbarlink2">ABOUT US</a>
                     <a href="#" className="navbarlink2">CONTACT</a>
-                    <a href="#" className="loginlink">LOG IN</a>
+                    <Link to="/login" className="loginlink">LOG IN</Link>
                 </div>
                 <div className="welcome">
                     <i><b>WELCOME,</b> THIS SITE<br/>
@@ -108,7 +108,7 @@ class HomePage extends React.Component {
                 </div>
                 <div className="help">
                     <h1>HOW CAN WE HELP YOU?</h1>
-                    <a href="#" className="button">Kabbe</a>
+                    <a href="#" className="button">Go read</a>
                 </div>
                 <div className="footer">
                     <i>COPYRIGHT @ HATTYUK</i>

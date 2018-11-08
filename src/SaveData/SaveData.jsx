@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { userActions } from '../_actions';
 
-class RegisterPage extends React.Component {
+class SavePage extends React.Component {
     constructor(props) {
         super(props);
 
@@ -36,18 +36,14 @@ class RegisterPage extends React.Component {
         
         return (
             <div className="col-md-6 col-md-offset-3">
-                <a href="#">Mentes</a>
+                <a href="#">Registered Data</a>
             </div>
         );
     }
 }
 
-function mapStateToProps(state) {
-    const { registering } = state.registration;
-    return {
-        registering
-    };
-}
 
-const connectedRegisterPage = connect(mapStateToProps)(RegisterPage);
-export { connectedRegisterPage as RegisterPage };
+
+
+
+export {SavePage};

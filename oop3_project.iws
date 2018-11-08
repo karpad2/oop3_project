@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b16afd15-b092-4679-8ad3-2345571c8896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/SaveData/SaveData.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SaveData/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oop3_project.iws" beforeDir="false" afterPath="$PROJECT_DIR$/oop3_project.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_constants/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_helpers/auth-header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_helpers/auth-header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_helpers/backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_helpers/backend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_helpers/fake-backend.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_helpers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_helpers/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="b16afd15-b092-4679-8ad3-2345571c8896" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +13,7 @@
     <session id="1501314064">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.opened" value="2" />
@@ -92,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/_constants/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+            <state>
+              <caret column="33" lean-forward="true" selection-start-column="33" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -254,7 +245,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -284,16 +275,15 @@
       <option name="presentableId" value="Default" />
       <updated>1541430325055</updated>
       <workItem from="1541430329448" duration="4787000" />
-      <workItem from="1541517421141" duration="172000" />
+      <workItem from="1541517421141" duration="912000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4959000" />
+    <option name="totallyTimeSpent" value="5699000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -464,10 +454,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/_constants/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        <state>
+          <caret column="33" lean-forward="true" selection-start-column="33" selection-end-column="33" />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

@@ -25,6 +25,7 @@ class SavePage extends React.Component {
     fetch('http://localhost:8080/save')
       .then(response => response.json())
       .then(data => this.setState({ data })
+        
 	  );
 
     localStorage.setItem("data",this.data);
@@ -41,9 +42,6 @@ class SavePage extends React.Component {
         );
     }
 }
-
-
-
 
 
 export {SavePage};

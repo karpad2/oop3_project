@@ -16,6 +16,19 @@ class HomePage extends React.Component {
         return (e) => this.props.dispatch(userActions.delete(id));
     }
 
+    constructor(props)
+    {
+        super (props);
+        let rankedlist=[];
+        //let rankedlist=fromfirebase...
+        rankedlist=[{userindex:"",badges:[],},{}];
+
+
+        let length=rankedlist.length;
+
+
+    }
+
     /*render() {
         const { user, users } = this.props;
         return (
@@ -65,37 +78,9 @@ class HomePage extends React.Component {
                 </div>
                 <div className="top5">
                     <table className="myTable"> 
-                        <caption>Top &nbsp;&nbsp;&nbsp;<b> 5 </b>&nbsp;&nbsp;&nbsp; list</caption>               
-                        <tr>
-                            <td className="border_here">1.</td>
-                            <td>Szabi</td>
-                            <td>55.000</td>
-                            <td>BADGEK</td>
-                        </tr>
-                        <tr>
-                            <td className="border_here">2.</td>
-                            <td>Szabi</td>
-                            <td>45.000</td>
-                            <td>BADGEK</td>
-                        </tr>
-                        <tr>
-                            <td className="border_here">3.</td>
-                            <td>Szabi</td>
-                            <td>35.000</td>
-                            <td>BADGEK</td>
-                        </tr>
-                        <tr>
-                            <td className="border_here">4.</td>
-                            <td>Szabi</td>
-                            <td>25.000</td>
-                            <td>BADGEK</td>
-                        </tr>
-                        <tr>
-                            <td className="border_here">5.</td>
-                            <td>Szabi</td>
-                            <td>15.000</td>
-                            <td>BADGEK</td>
-                        </tr>
+                        <caption>Top &nbsp;&nbsp;&nbsp;<b> 5 </b>&nbsp;&nbsp;&nbsp; list</caption>  
+                       
+                      {/* <listofelement props={rankedlist}></listofelement>*/}
                     </table>
                 </div>
                 <div className="badges">
@@ -126,6 +111,27 @@ function mapStateToProps(state) {
         users
     };
 }
+/*
+function listofelement(props)
+{
+    return (
+        for (var i=0;i<props.length;i++) {
+        let l=props[i];
+        <tr>
+        <td className="border_here">{i}.</td>
+                            <td>{l.name}</td>
+                            <td>{l.point}</td>
+                            <td>{l.badges}</td>
+        </tr>    
+            
+        });
+                         
+    
+}*/
+    
+    
+  
+
 
 const connectedHomePage = connect(mapStateToProps)(HomePage);
 export { connectedHomePage as HomePage };

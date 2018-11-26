@@ -47,6 +47,10 @@ $users=mysqli_fetch_all($result,MYSQLI_BOTH);
                 </tr>";
 
               }
+            if($i==0)
+        {
+        echo"<tr><td colspan=\"4\">Nincs tanuló</td></tr>";
+        }
               echo '
               </tbody>
             </table>

@@ -12,6 +12,8 @@ include "head.php";
 define("secret","mikroci");
 include "db_config.php";
 
+
+
 if(isset($_GET["edit"])){
 
     if(((isset($_SESSION["user_id"]) AND $_SESSION["user_id"]==$_GET["edit"]) or (isset($_SESSION["admin"]) and $_SESSION["admin"]==true)))
@@ -30,7 +32,7 @@ if(isset($_GET["edit"])){
         $result=mysqli_query($conn,$sql);
         if($result==true)
         {
-            header("Location:admin/index.php");
+            header("Location:/admin/index.php");
         }
     }
 
@@ -65,7 +67,7 @@ if(isset($_GET["edit"])){
          Jelszó módosítás:  <input class=\"form-control\" type=\"password\" name=\"pass1\"><br>
                             <input class=\"form-control\" type=\"password\" name=\"pass2\">
                             <br>
-         <input type=\"submit\" class=\"btn btn-primary\" value=\"Módositás\">
+        <input type=\"submit\" class=\"btn btn-primary\" value=\"Módositás\">
         </form><br>
         <form action=\"login.php?edit=$user_id&upload=1\" method=\"post\" enctype=\"multipart/form-data\">
         Kép feltöltés: <input type=\"file\"  name=\"file\" id=\"file\" accept=\"image/png\">
@@ -116,9 +118,9 @@ else {
                         $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
                         if (mysqli_num_rows($result) > 0) {
 
-                            header("Location: mypage.php");
+                            header("Location: /admin/mypage.php");
                         }
-                        header("Location: index.php");
+                        header("Location: /admin/index.php");
 
                     }
 
@@ -135,8 +137,7 @@ else {
 
         }
 switch ($_GET["mod"]) {
-            case 1: {
-                echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+            case 1: {echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
     </button>
@@ -155,9 +156,11 @@ switch ($_GET["mod"]) {
             }break;
         }
 
-    } else echo "<form action=\"login.php?mod=1\" method=\"post\">
+    }
+
+    echo "<form action=\"login.php?mod=1\" method=\"post\">
                 username: <input type=\"text\" name=\"username\" placeholder=\"Kérem a felhasználó nevet\" class=\"form-control\"><br>
                 password: <input type=\"password\" name=\"pass\" class=\"form-control\"><br>
-                <input type=\"submit\" class=\"btn btn-primary btn-block btn-large\" value=\"Login\"></form>";
+          <input type=\"submit\" class=\"btn btn-primary btn-block btn-large\" value=\"Login\"></form>";
 }
 include "footer.php";

@@ -6,7 +6,7 @@
  * Time: 19:59
  */
 if(!isset($_SESSION["logged_in"])) session_start();
-
+include "var.php";
 $loggedin=false;
 
 if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] == true) $loggedin=true;

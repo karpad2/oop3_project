@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Piszi
- * Date: 2018.01.03.
- * Time: 13:58
- */
 date_default_timezone_set('Europe/Belgrade');
 if(defined("secret") AND secret=="mikroci")
 {

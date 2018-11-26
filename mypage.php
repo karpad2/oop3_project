@@ -16,7 +16,6 @@ if($loggedin==false) header("Location:index.php");
 
     <div class="jumbotron text-center">
         <h1>Welcome <?php echo $_SESSION["username"];?></h1>
-
     </div>
 
 
@@ -31,7 +30,7 @@ if($loggedin==false) header("Location:index.php");
 <div class="col-md-4" >
     <h2>Tracking</h2>
     <p>This mod allows you to follow your actions from your mobile.</p>
-    <a href="tracker.php?mod=start"  class="btn btn-primary bg-success">Start!</a>
+    <a href="save.php?mod=start" class="btn btn-primary bg-success">Start!</a>
 </div>
 
     <div class="col-md-4">

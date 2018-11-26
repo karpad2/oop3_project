@@ -87,7 +87,7 @@ if(!($("#map").length==0)) {
                     {update=setInterval(function (){
                             jstring = JSON.stringify(datas);
                            // console.log(jstring);
-                            $.post("tracker.php?record=record", {data: jstring}, function (data) {
+                            $.post("save.php?record=record", {data: jstring}, function (data) {
                                 if (data.length != 0){
                                     var l = JSON.parse(data);
                                     $("#speed").text(l.speed);
@@ -140,7 +140,7 @@ if(!($("#map").length==0)) {
 
             jstring = JSON.stringify(datas);
             console.log(jstring);
-            $.post("tracker.php?record=record", {data: jstring}, function (data) {
+            $.post("save.php?record=record", {data: jstring}, function (data) {
                 if (data.length != 0){
                     var l = JSON.parse(data);
                     $("#speed").text(l.speed);
@@ -152,7 +152,7 @@ if(!($("#map").length==0)) {
             {
                 datas = [];
                 localStorage.clear();
-				window.location.href="tracker.php?mod=end";
+				window.location.href="save.php?mod=end";
 
             })
            .fail(function () {

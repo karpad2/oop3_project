@@ -9,13 +9,20 @@
 
 define("secret","mikroci");
 include "db_config.php";
+$sql="SET NAMES utf8";
+mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
-$sql="SELECT students.Student_id,  IFNULL(SUM(Point),0) as 'Point' FROM students left join students_points on students.Student_id = students_points.Student_id
-GROUP BY students.Student_id order by Point DESC";
+$sql="SELECT students.Student_id, students.student_name,  IFNULL(SUM(Point),0) as 'Point' FROM students left join students_points on students.Student_id = students_points.Student_id
+GROUP BY students.student_id order by Point DESC";
 
 //$sql="SELECT Student_id FROM students ";
 $result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
 $users=mysqli_fetch_all($result,MYSQLI_BOTH);
+
+$badge[0][0] = "Activity.svg"; $badge[0][1] = "#cd7f32";
+$badge[1][0] = "B_Activity.svg"; $badge[1][1] = "#cd7f32";
+$badge[2][0] = "S_Activity.svg"; $badge[2][1] = "#c0c0c0";
+$badge[3][0] = "G_Activity.svg"; $badge[3][1] = "#ffd700";
 
 //var_dump($users);
 if (isset($_COOKIE['quote'])) {
@@ -61,6 +68,9 @@ echo '
           $percent = floor($current / $max * 100);
           $current=number_format($current, 0, " ", " ");
           if ($percent == 0) $percent++;
+
+          $rand = rand(0,12);
+
           echo "
           <tr>
             <th scope=\"row\"><span class=\"number\" title=\"Ez nem id, hanem sorszám.\">$i.</span></th>
@@ -69,7 +79,20 @@ echo '
               <div class=\"progress_container\"><div class=\"progressBar\" style=\"width:{$percent}%\"></div></div>
             </td>
             <td><div class=\"student_points\">{$current}<br>points</div></td>
-            <td><div class=\"badge_container\"><img src=\"img/badges/G_Activity.svg\"><i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i></div></td>
+            <td>
+              <div class=\"badge_container\">";
+              if ($rand == 0)
+                echo "<img src=\"img/badges/{$badge[$rand][0]}\">";
+              else {
+                $badge_num = floor($rand / 5) + 1;
+                echo "<img src=\"img/badges/{$badge[$badge_num][0]}\">";
+                $mod = ($badge_num - 1) == 0 ? $rand-1 : ($rand-1) % (4 * ($badge_num - 1));
+                for ($j = 0; $j < $mod; $j++)
+                  echo "<i style=\"color:{$badge[$badge_num][1]}\" class=\"fas fa-star\"></i>";
+              }
+            echo "
+              </div>
+            </td>
           </tr>";
         }
         if(count($users)==0) {
@@ -80,13 +103,16 @@ echo '
       if (count($users) > 5) {
         echo '
           <tbody id="hidden" class="hidden_table">';
-          for ($i = 4; $i < count($users); $i++) {
+          for ($i = 6; $i < count($users); $i++) {
             //++$i;
-            $current=$users[$i]["Point"];
-            $user = $users[$i];
+            $current=$users[$i-1]["Point"];
+            $user = $users[$i-1];
             $percent = floor($current / $max * 100);
             $current=number_format($current, 0, " ", " ");
             if ($percent == 0) $percent++;
+
+            $rand = rand(0,12);
+
             echo "
             <tr>
               <th scope=\"row\"><div class=\"number\">$i.</div></th>
@@ -95,7 +121,20 @@ echo '
                 <div class=\"progress_container\"><div style=\"width:{$percent}%\" class=\"progressBar\"></div></div>
               </td>
               <td><div class=\"student_points\">{$current}<br>points</div></td>
-              <td></td>
+              <td>
+              <div class=\"badge_container\">";
+              if ($rand == 0)
+                echo "<img src=\"img/badges/{$badge[$rand][0]}\">";
+              else {
+                $badge_num = floor($rand / 5) + 1;
+                echo "<img src=\"img/badges/{$badge[$badge_num][0]}\">";
+                $mod = ($badge_num - 1) == 0 ? $rand-1 : ($rand-1) % (4 * ($badge_num - 1));
+                for ($j = 0; $j < $mod; $j++)
+                  echo "<i style=\"color:{$badge[$badge_num][1]}\" class=\"fas fa-star\"></i>";
+              }
+            echo "
+              </div>
+              </td>
             </tr>";
           }
         echo '

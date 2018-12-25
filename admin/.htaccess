@@ -1,3 +1,0 @@
-AuthUserFile /home/highscore1/public_html/admin/.htpasswd
-AuthType Basic
-AuthName " Abandon All Hope, Ye Who Enter Here ~ Admin login "

@@ -16,7 +16,7 @@ if(isset($_GET["record"])AND $_GET["record"]=="record") {
         $date=$vars["date"];
        // $vars=array();
         $students = $vars["index_numbers"];
-        $sql = "INSERT INTO upload_data VALUES ('','$user','$subject','$date')";
+        $sql = "select  add_week('$subject','$date') as 'id'";
         try {
             $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
         }
@@ -24,8 +24,8 @@ if(isset($_GET["record"])AND $_GET["record"]=="record") {
         {
             die($ex);
         }
-        $upload_id=mysqli_insert_id($result);
-
+        $upload_id=mysqli_fetch_all($result,3);
+        $upload_id=$upload_id[0];
         foreach ($students as $student)
         {
             try{

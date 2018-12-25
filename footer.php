@@ -6,6 +6,9 @@
  * Time: 22:48
  */
 ?>
+    <div class="footer">
+        <div>Copyright © <?php echo date("Y"); ?> Design by Swans</div>
+    </div>
 </div>
 </body>
 </html>

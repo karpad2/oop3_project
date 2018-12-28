@@ -18,10 +18,24 @@ $sql="SELECT * FROM list_student_by_points";
 $result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
 $users=mysqli_fetch_all($result,MYSQLI_BOTH);
 
-$badge[0][0] = "Activity.svg"; $badge[0][1] = "#cd7f32";
-$badge[1][0] = "B_Activity.svg"; $badge[1][1] = "#cd7f32";
-$badge[2][0] = "S_Activity.svg"; $badge[2][1] = "#c0c0c0";
-$badge[3][0] = "G_Activity.svg"; $badge[3][1] = "#ffd700";
+$badge[0][0] = "B_Activity.svg"; $badge[0][1] = "#cd7f32";  //bronze
+$badge[1][0] = "S_Activity.svg"; $badge[1][1] = "#c0c0c0";  //silver
+$badge[2][0] = "G_Activity.svg"; $badge[2][1] = "#ffd700";  //gold
+$badge[3][0] = "P_Activity.svg"; $badge[3][1] = "#3E6A72";  //platinum
+$badge[4][0] = "D_Activity.svg"; $badge[4][1] = "#b9f2ff";  //diamond
+
+function getBadge ($num, $badge) {
+  if ($num == 0)
+    echo "<img src=\"img/badges/Activity.svg\" alt=\"Badge_icon\">";
+  else {
+    $num--;
+    $badge_num = floor($num / 4);
+    echo "<img src=\"img/badges/{$badge[$badge_num][0]}\" alt=\"Badge_icon\">";
+    $mod = $badge_num == 0 ? $num : $num % (4 * $badge_num);
+    for ($j = 0; $j < $mod; $j++)
+      echo "<i style=\"color:{$badge[$badge_num][1]}\" class=\"fas fa-star\"></i>";
+  }
+}
 
 //var_dump($users);
 if (isset($_COOKIE['quote'])) {
@@ -74,21 +88,13 @@ echo '
           <tr>
             <th scope=\"row\"><span class=\"number\" title=\"Ez nem id, hanem sorszám.\">$i.</span></th>
             <td>
-              <div class=\"student_id\">{$user["student_id"]}</div>
+              <div class=\"student_id\">{$user["student_name"]}</div>
               <div class=\"progress_container\"><div class=\"progressBar\" style=\"width:{$percent}%\"></div></div>
             </td>
             <td><div class=\"student_points\">{$current}<br>points</div></td>
             <td>
               <div class=\"badge_container\">";
-              if ($rand == 0)
-                echo "<img src=\"img/badges/{$badge[$rand][0]}\">";
-              else {
-                $badge_num = floor($rand / 5) + 1;
-                echo "<img src=\"img/badges/{$badge[$badge_num][0]}\">";
-                $mod = ($badge_num - 1) == 0 ? $rand-1 : ($rand-1) % (4 * ($badge_num - 1));
-                for ($j = 0; $j < $mod; $j++)
-                  echo "<i style=\"color:{$badge[$badge_num][1]}\" class=\"fas fa-star\"></i>";
-              }
+              getBadge($rand, $badge);
             echo "
               </div>
             </td>
@@ -111,26 +117,19 @@ echo '
             if ($percent == 0) $percent++;
 
             $rand = $user["cnt"];
+            //$rand = rand(0,20);
 
             echo "
             <tr>
               <th scope=\"row\"><div class=\"number\">$i.</div></th>
               <td>
-                <div class=\"student_id\">{$user["student_id"]}</div>
+                <div class=\"student_id\">{$user["student_name"]}</div>
                 <div class=\"progress_container\"><div style=\"width:{$percent}%\" class=\"progressBar\"></div></div>
               </td>
               <td><div class=\"student_points\">{$current}<br>points</div></td>
               <td>
               <div class=\"badge_container\">";
-              if ($rand == 0)
-                echo "<img src=\"img/badges/{$badge[$rand][0]}\">";
-              else {
-                $badge_num = floor($rand / 5) + 1;
-                echo "<img src=\"img/badges/{$badge[$badge_num][0]}\">";
-                $mod = ($badge_num - 1) == 0 ? $rand-1 : ($rand-1) % (4 * ($badge_num - 1));
-                for ($j = 0; $j < $mod; $j++)
-                  echo "<i style=\"color:{$badge[$badge_num][1]}\" class=\"fas fa-star\"></i>";
-              }
+              getBadge($rand, $badge);
             echo "
               </div>
               </td>
